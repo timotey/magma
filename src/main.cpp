@@ -3,14 +3,8 @@
 #include"magma/vk.hpp"
 
 int main(int argc, char const ** argv) {
-    VkApplicationInfo app {
-        .pApplicationName = "Hello",
-        .applicationVersion = 1,
-        .pEngineName = "Einginigger",
-        .engineVersion = 1,
-        .apiVersion = VK_API_VERSION_1_1
-    };
-    magma::instance inst = magma::instance_builder()
-        .add_extension<magma::khr::surface>()
-        .build();
+    constexpr auto b = magma::instance_builder()
+        .version<magma::make_version<0,1,1,0>>()
+        .add_extension<magma::khr::surface>();
+    auto inst = b.build();
 }

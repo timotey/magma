@@ -4,11 +4,7 @@
 
 namespace magma::khr {
 
-template<class Base>
-struct surface;
-
-template<template<class> class... Ts>
-struct surface<instance<Ts...>>{
+struct surface{
     static constexpr std::string_view name = "VK_KHR_SURFACE";
 };
 
